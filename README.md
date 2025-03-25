@@ -117,17 +117,17 @@ pip install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
 ```
 
 ### 2. 运行项目
-```bash
+```bash  
 cd backend
 python app.py
 ```
-服务器将在 http://localhost:8000 启动
+服务器将在 https://hello-ang.github.io/university/ 启动
 
 ## 项目说明
 本项目是作为Web开发课程的学习作业完成，旨在通过实践来掌握：
 1. 前后端分离架构的设计与实现
 2. 响应式网页设计
-3. RESTful API的开发
+3. RESTful API的开发  
 4. 用户认证与授权
 5. 文件上传与管理
 6. 数据存储与处理
