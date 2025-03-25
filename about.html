@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于岷县 - 岷县文化宣传</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <span class="header-text">千年药乡</span>
+        <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+        <span class="header-text">当归岷州</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <a href="index.html">首页</a>
+            <a href="culture.html">文化特色</a>
+            <a href="tourism.html">旅游信息</a>
+            <a href="history.html">历史背景</a>
+            <a href="specialties.html">特产美食</a>
+            <a href="folklore.html">民俗风情</a>
+            <a href="interaction.html">互动交流</a>
+            <a href="about.html" class="active">关于岷县</a>
+            <a href="author.html">作者信息</a>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域的重新排序和优化 -->
+    <main class="main-content">
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>关于岷县</h1>
+                <p>千年药乡 多彩岷州</p>
+            </div>
+        </section>
+
+        <!-- 地理位置和地图放在最前面，因为这是最基础的信息 -->
+        <section class="geography-section">
+            <h2 class="section-title">地理位置</h2>
+            <div class="geography-layout">
+                <!-- 左侧地图 -->
+                <div class="map-container">
+                    <div id="map" style="width: 100%; height: 500px; border-radius: 8px;"></div>
+                </div>
+                <!-- 右侧地理信息 -->
+                <div class="geo-info">
+                    <div class="info-item">
+                        <h3>地形地貌</h3>
+                        <p>岷县地处青藏高原与黄土高原过渡地带，地势西南高、东北低，海拔1700-3941米</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>气候特征</h3>
+                        <p>属温带半干旱气候，年平均气温6.7℃，年降水量460-620毫米</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>水文条件</h3>
+                        <p>境内河流属黄河水系，岷江发源于此，水资源丰富</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 城市概况放在地理位置后面 -->
+        <section class="city-overview">
+            <h2 class="section-title">城市概况</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">📍</div>
+                    <h3>行政区划</h3>
+                    <p>全县辖18个乡镇，总面积3578平方公里</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">👥</div>
+                    <h3>人口概况</h3>
+                    <p>总人口约45万人，以汉族为主，少数民族占比约5%</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🌿</div>
+                    <h3>特色产业</h3>
+                    <p>中药材种植加工、农副产品加工为主要产业</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>历史沿革</h3>
+                    <p>古丝绸之路重镇，具有深厚的历史文化底蕴</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 在城市概况后添加新的统计数据展示区域 -->
+        <section class="statistics-section">
+            <h2 class="section-title">发展数据</h2>
+            <div class="statistics-container">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <div class="stat-progress" data-value="72">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#983636" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <span class="progress-number">72%</span>
+                        </div>
+                        <h4>城镇化率</h4>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-progress" data-value="85">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#c84a4a" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <span class="progress-number">85%</span>
+                        </div>
+                        <h4>农业机械化率</h4>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-progress" data-value="93">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#e74c3c" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <span class="progress-number">93%</span>
+                        </div>
+                        <h4>教育普及率</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产业发展板块重新设计 -->
+        <section class="industry-section">
+            <h2 class="section-title">产业发展</h2>
+            <div class="industry-container">
+                <!-- 中药材产业 -->
+                <div class="industry-block">
+                    <div class="industry-header">
+                        <div class="industry-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>中药材产业</h3>
+                    </div>
+                    <div class="industry-content">
+                        <div class="industry-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">50</span>
+                                <span class="stat-unit">万亩</span>
+                                <p>种植面积</p>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">20</span>
+                                <span class="stat-unit">亿元</span>
+                                <p>年产值</p>
+                            </div>
+                        </div>
+                        <div class="industry-details">
+                            <div class="detail-item">
+                                <img src="images/界面八/中药材.webp" alt="中药材基地">
+                                <div class="detail-info">
+                                    <h4>种植基地</h4>
+                                    <ul>
+                                        <li>当归种植基地</li>
+                                        <li>党参规模化种植</li>
+                                        <li>黄芪产业园区</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文化旅游产业 -->
+                <div class="industry-block">
+                    <div class="industry-header">
+                        <div class="industry-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>文化旅游产业</h3>
+                    </div>
+                    <div class="industry-content">
+                        <div class="industry-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100</span>
+                                <span class="stat-unit">万人次</span>
+                                <p>年接待游客</p>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">持续</span>
+                                <span class="stat-unit">增长</span>
+                                <p>旅游收入</p>
+                            </div>
+                        </div>
+                        <div class="industry-details">
+                            <div class="detail-item">
+                                <img src="images/界面八/文化旅游.jpg" alt="文化旅游">
+                                <div class="detail-info">
+                                    <h4>特色项目</h4>
+                                    <ul>
+                                        <li>红色旅游基地</li>
+                                        <li>民俗文化体验</li>
+                                        <li>生态观光旅游</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 修改未来展望板块 -->
+        <section class="future-section">
+            <h2 class="section-title">未来展望</h2>
+            <div class="future-cards">
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-industry"></i>
+                        <h3>产业升级</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>现代化产业体系</h4>
+                        <ul>
+                            <li>建设智能化种植基地</li>
+                            <li>引进先进加工设备</li>
+                            <li>发展精深加工产业</li>
+                            <li>打造全产业链体系</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-leaf"></i>
+                        <h3>生态建设</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>绿色发展战略</h4>
+                        <ul>
+                            <li>推进生态种植模式</li>
+                            <li>建设生态示范园区</li>
+                            <li>发展循环农业</li>
+                            <li>保护自然生态系统</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-users"></i>
+                        <h3>民生改善</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>共同富裕目标</h4>
+                        <ul>
+                            <li>提升居民收入水平</li>
+                            <li>完善公共服务体系</li>
+                            <li>优化人居环境</li>
+                            <li>促进就业创业</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-globe"></i>
+                        <h3>品牌建设</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>打造区域品牌</h4>
+                        <ul>
+                            <li>提升品牌知名度</li>
+                            <li>扩大市场影响力</li>
+                            <li>加强质量认证</li>
+                            <li>拓展国际市场</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>人才培养</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>人才发展战略</h4>
+                        <ul>
+                            <li>培养专业技术人才</li>
+                            <li>引进高端人才</li>
+                            <li>建设培训基地</li>
+                            <li>促进技术创新</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <div class="card-front">
+                        <i class="fas fa-handshake"></i>
+                        <h3>文化传承</h3>
+                    </div>
+                    <div class="card-back">
+                        <h4>文化发展规划</h4>
+                        <ul>
+                            <li>保护传统文化</li>
+                            <li>发展特色文创</li>
+                            <li>推广地方文化</li>
+                            <li>促进文旅融合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>版权所有 &copy; 2024 千年药乡 多彩岷州</p>
+    </footer>
+
+    <!-- 在</body>标签前添加高德地图API和初始化代码 -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=ecdd333a678939b123ef3b6a84298eda"></script>
+
+    <!-- 添加新的CSS样式 -->
+    <style>
+        .geography-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .geo-info {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .overview-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .geography-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+    </style>
+
+    <!-- 地图初始化代码 -->
+    <script>
+        window.onload = function() {
+            var map = new AMap.Map('map', {
+                resizeEnable: true,
+                zoom: 13,
+                center: [104.036758, 34.438306]
+            });
+
+            // 添加标记
+            var marker = new AMap.Marker({
+                position: new AMap.LngLat(104.036758, 34.438306),
+                title: '岷县'
+            });
+            marker.setMap(map);
+
+            // 设置地图的显示范围
+            map.setFitView();
+        }
+    </script>
+
+    <!-- 在body结束标签前添加 -->
+    <script src="js/about.js"></script>
+</body>
+</html>

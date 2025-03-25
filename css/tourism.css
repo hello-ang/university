@@ -1,0 +1,605 @@
+/* 旅游页面整体样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.content.loaded {
+    opacity: 1;
+}
+
+/* 添加滚动显示动画 */
+.tourism-section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tourism-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tourism-section h2 {
+    color: #983636;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tourism-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #983636, #c84a4a);
+}
+
+/* 景点展示样式 */
+.spot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.spot-item {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.spot-item:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.spot-item img {
+    transform: scale(1);
+    transition: transform 0.6s ease;
+}
+
+.spot-item:hover img {
+    transform: scale(1.1);
+}
+
+.spot-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(152, 54, 54, 0.1),
+        transparent,
+        rgba(152, 54, 54, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.spot-item:hover::before {
+    opacity: 1;
+}
+
+.spot-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(152, 54, 54, 0.9);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    z-index: 2;
+    transform: translateY(-5px);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.spot-item:hover .spot-tag {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(152, 54, 54, 0.3);
+}
+
+.spot-info {
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.spot-info h3 {
+    color: #983636;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.spot-item:hover .spot-info h3 {
+    color: #c84a4a;
+}
+
+.spot-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.spot-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.spot-rating {
+    color: #f4b400;
+    letter-spacing: 2px;
+}
+
+.spot-price {
+    color: #983636;
+    font-weight: bold;
+}
+
+.spot-details {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.spot-details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.spot-details i {
+    font-size: 1.2em;
+    color: #983636;
+}
+
+/* 错开动画时间 */
+.spot-item:nth-child(2) { transition-delay: 0.2s; }
+.spot-item:nth-child(3) { transition-delay: 0.4s; }
+
+/* 旅游线路样式 */
+.route-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.route-item {
+    background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border-left: 5px solid #983636;
+    transition: all 0.3s ease;
+}
+
+.route-item:hover {
+    transform: translateX(10px);
+    box-shadow: -5px 5px 20px rgba(152, 54, 54, 0.2);
+}
+
+.route-header {
+    background: #983636;
+    padding: 15px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.route-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #983636;
+}
+
+.route-content {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+.route-map {
+    flex: 0 0 40%;
+}
+
+.route-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.route-details {
+    flex: 1;
+}
+
+.route-day {
+    margin-bottom: 20px;
+}
+
+.route-day h4 {
+    color: #983636;
+    margin-bottom: 10px;
+}
+
+.route-day ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.route-day li {
+    position: relative;
+    padding: 5px 0;
+}
+
+.route-day li::before {
+    content: '•';
+    color: #983636;
+    position: absolute;
+    left: -15px;
+}
+
+/* 错开动画时间 */
+.route-item:nth-child(2) { transition-delay: 0.2s; }
+.route-item:nth-child(3) { transition-delay: 0.4s; }
+
+/* 旅游资讯样式 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.info-card:hover {
+    border-bottom-color: #983636;
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    color: #983636;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.info-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #983636;
+    transition: width 0.3s ease;
+}
+
+.info-card:hover h3::after {
+    width: 100px;
+}
+
+.info-content p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.info-content strong {
+    color: #666;
+}
+
+/* 四季特色活动样式 */
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.season-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: white;
+}
+
+.season-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(152, 54, 54, 0.8), rgba(152, 54, 54, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.season-card:hover::before {
+    opacity: 1;
+}
+
+.season-card:hover .season-content {
+    transform: translateY(-10px);
+    color: white;
+}
+
+.season-content {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.season-image {
+    position: relative;
+    height: 200px;
+}
+
+.season-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.season-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(152, 54, 54, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.season-content h3 {
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.season-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.season-content li {
+    padding: 5px 0;
+    color: #666;
+}
+
+/* 错开动画时间 */
+.season-card:nth-child(2) { transition-delay: 0.2s; }
+.season-card:nth-child(3) { transition-delay: 0.4s; }
+.season-card:nth-child(4) { transition-delay: 0.6s; }
+
+/* 美食推荐样式 */
+.food-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.food-card {
+    position: relative;
+    border-radius: 25px;
+    background: white;
+    overflow: hidden;
+}
+
+.food-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.food-card:hover::after {
+    opacity: 1;
+}
+
+.food-card:hover .food-content {
+    transform: translateY(-20px);
+}
+
+.food-content {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    padding: 20px;
+    color: #333;
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    color: #983636;
+    margin-bottom: 10px;
+}
+
+.food-tags {
+    margin-top: 15px;
+}
+
+.food-tags span {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* 错开动画时间 */
+.food-card:nth-child(2) { transition-delay: 0.2s; }
+.food-card:nth-child(3) { transition-delay: 0.4s; }
+
+/* 游客服务样式 */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-item {
+    background: white;
+    border-radius: 30px;
+    padding: 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #983636, #ff9999);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.service-item:hover::before {
+    transform: scaleX(1);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(152, 54, 54, 0.15);
+}
+
+.service-icon {
+    font-size: 2.5em;
+    color: #983636;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-item h3 {
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: #666;
+    margin: 5px 0;
+}
+
+/* 错开动画时间 */
+.service-item:nth-child(2) { transition-delay: 0.2s; }
+.service-item:nth-child(3) { transition-delay: 0.4s; }
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .route-content {
+        flex-direction: column;
+    }
+
+    .route-map {
+        flex: 0 0 200px;
+    }
+
+    .spot-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+@media screen and (max-width: 768px) {
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .food-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 响应式导航栏动画 */
+.nav-container {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-container.active {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        transform: translateX(-100%);
+    }
+    
+    .nav-container.active {
+        transform: translateX(0);
+    }
+}
+
+/* 添加一些全局的颜色变量 */
+:root {
+    --primary-color: #983636;
+    --primary-light: #ff9999;
+    --primary-dark: #722727;
+    --background-light: #f8f9fa;
+    --text-dark: #333;
+    --text-light: #666;
+}
